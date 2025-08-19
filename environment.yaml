@@ -1,0 +1,28 @@
+name: pdf-captionator-env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - dash
+  - reportlab
+  - pypdf
+  - pdf2image
+  - pillow
+  - pip
+  - pip:
+      # pdf2image requires poppler installed on the system, not via pip.
+      # Ensure Poppler is installed on your OS separately.
+      - dash
+      - dash_bootstrap_components
+      - reportlab
+      - pypdf
+      - pdf2image
+      - pillow
+
+# Notes:
+# - Suggested Dash app name: "PDF Captionator" — a concise, catchy name for a PDF caption adding tool.
+# - Install Poppler separately (not in Conda env) because pdf2image relies on it.
+#   macOS: brew install poppler
+#   Ubuntu/Debian: sudo apt-get install poppler-utils
+#   Windows: download from https://github.com/oschwartz10612/poppler-windows and add to PATH
